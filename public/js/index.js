@@ -31,17 +31,24 @@ postInput.addEventListener('click', function() {
 });
 
 function displayResults(restaurants) {
-// Empty the list
-    resultsList.innerHTML = '';
-// Limit results to first 10
+  resultsList.innerHTML = ''; // Clear existing list items
+
   if (restaurants && restaurants.length > 0) {
-    restaurants.slice(0, 10).forEach((restaurant) => {
-        const listItem = document.createElement('li');
-        listItem.classList.add('list-group-item');
-        listItem.textContent = `${restaurant.name}, ${restaurant.cuisines.join(', ')}, Rating: ${restaurant.rating}, ${restaurant.address}`;
-        resultsList.appendChild(listItem);
-    });
+      // Only process the first 10 restaurant entries
+      restaurants.slice(0, 10).forEach(restaurant => {
+          const listItem = document.createElement('li');
+          listItem.classList.add('list-group-item');
+
+          // Extract and format the response from endpoint
+          const cuisines = restaurant.cuisines.map(cuisine => cuisine.name).join(', ');
+          const rating = restaurant.rating ? restaurant.rating.starRating : 'No rating';
+          const address = `${restaurant.address.firstLine}, ${restaurant.address.city}, ${restaurant.address.postalCode}`;
+
+          // Set text content for list item
+          listItem.textContent = `${restaurant.name}, Cuisines: ${cuisines}, Rating: ${rating}, Address: ${address}`;
+          resultsList.appendChild(listItem);
+      });
   } else {
-    resultsList.innerHTML = '<li class="list-group-item text-muted text-center">No restaurants found! Please input another postcode</li>';
+      resultsList.innerHTML = '<li class="list-group-item text-muted text-center">No restaurants found! Please input another postcode</li>';
   }
-};
+}
