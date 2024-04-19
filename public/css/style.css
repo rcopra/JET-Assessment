@@ -1,0 +1,28 @@
+.card {
+  margin-bottom: 1rem;
+  border: none;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.badge {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.alert-warning {
+  text-align: center;
+}
