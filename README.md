@@ -33,7 +33,7 @@ Per the assigment instructions, we're only concerned with the following pieces o
 
 ## Assumptions
 
-- The application assumes the restaurant data endpoint is CORS enabled. I came to this assumption after trying to test the application, and having CORS errors thrown in the Developer console in Firefox. I wasn't sure how to tackle this issue at first as I haven't had experience dealing with CORS before. However, the [Mozilla Documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORSl) contained some helpful information and a link to a Stack Overflow page, where I found some solutions for the error. I found that using a proxy through [Axios](https://github.com/axios/axios) were the solutions I used to set up a development environment.
+- The application assumes the restaurant data endpoint is CORS enabled. I came to this assumption after trying to test the application, and having CORS errors thrown in the Developer console in Firefox. I wasn't sure how to tackle this issue at first as I haven't had experience dealing with CORS before. However, the [Mozilla Documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) contained some helpful information and a link to a Stack Overflow page, where I found some solutions for the error. I found that using a proxy through [Axios](https://github.com/axios/axios) were the solutions I used to set up a development environment.
 
 ## Potential Improvements
 
